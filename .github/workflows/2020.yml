@@ -14,7 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install dependencies
+      - name: Where am I
+        working-directory: ./2020
+        run: pwd && ls -l
+
+        - name: Install dependencies
         working-directory: ./2020
         run: cpanm --installdeps --notest .
 
