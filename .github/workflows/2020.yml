@@ -2,19 +2,23 @@ name: 2020 testing
 
 on:
   push:
-    branches:
-      - master
-    paths:
-      - '2020/**'
+    branches: '*'
+    paths: '2020/**'
 
 jobs:
-  perl:
+  build:
     runs-on: ubuntu-latest
     container:
       image: perldocker/perl-tester:5.28
+
     steps:
-      - uses: actions/checkout@v2
-      - run: cpanm --installdeps .
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: cpanm --installdeps --notest .
         working-directory: 2020
-      - run: prove -lv t
+
+      - name: Run tests
+        run: prove -lv
         working-directory: 2020
