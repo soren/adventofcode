@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 2020/
+      - '2020/**'
 
 jobs:
   perl:
