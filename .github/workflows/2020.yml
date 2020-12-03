@@ -18,7 +18,7 @@ jobs:
         working-directory: ./2020
         run: pwd && ls -l
 
-        - name: Install dependencies
+      - name: Install dependencies
         working-directory: ./2020
         run: cpanm --installdeps --notest .
 
