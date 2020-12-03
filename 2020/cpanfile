@@ -1,0 +1,2 @@
+requires 'Import::Into', '1.002005';
+requires 'Nice::Try', '0.1.6';
