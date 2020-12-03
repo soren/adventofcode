@@ -3,7 +3,6 @@ name: 2020 testing
 on:
   push:
     branches: '*'
-    paths: '2020/**'
 
 jobs:
   build:
