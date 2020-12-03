@@ -1,0 +1,19 @@
+name: 2020 testing
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 2020/
+
+jobs:
+  perl:
+    runs-on: ubuntu-latest
+    container:
+      image: perldocker/perl-tester:5.28
+    steps:
+      - uses: actions/checkout@v2
+      - name: prove
+        run: prove -l
+        working-directory: 2020
